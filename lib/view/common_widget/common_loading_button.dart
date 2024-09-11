@@ -19,6 +19,7 @@ class CommonLoadingButton extends StatelessWidget {
         child: const Center(
             child: CircularProgressIndicator(
           color: Colors.white,
+              backgroundColor: AppColor.primaryColor,
         )));
   }
 }
