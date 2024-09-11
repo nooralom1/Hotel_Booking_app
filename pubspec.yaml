@@ -14,15 +14,21 @@ dependencies:
 
   cupertino_icons: ^1.0.6
   get: ^4.6.6
+  flutter_timer_countdown: ^1.0.7
+  flutter_launcher_icons: ^0.13.1
 
 
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
-
   flutter_lints: ^3.0.0
+  flutter_launcher_icons: "^0.13.1"
+
+flutter_launcher_icons:
+      android: true
+      image_path: "assets/app_icon/app_icon.png"
+      min_sdk_android: 21
 
 
 flutter:
@@ -33,3 +39,5 @@ flutter:
 
   assets:
       - assets/image/
+      - assets/app_icon/
+      - assets/database/
