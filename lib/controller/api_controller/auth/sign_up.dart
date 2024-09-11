@@ -7,7 +7,7 @@ class SignUpService {
     required String pass,
   }) async {
     try {
-      await Future.delayed(const Duration(seconds: 2));
+      await Future.delayed(const Duration(seconds: 1));
       return true;
     } catch (e) {
       debugPrint("Error: $e");
