@@ -18,17 +18,15 @@ class Splash extends StatelessWidget {
           children: [
             Image.asset("assets/image/splash_icon.png"),
             const CommonText(
-              text: 'WanderStay',
-              fColor: Colors.white,
-              fWeight: FontWeight.bold,
-              fSize: 45,
-            ),
+                text: 'WanderStay',
+                fColor: Colors.white,
+                fWeight: FontWeight.bold,
+                fSize: 45),
             const CommonText(
-              text: "Find Your Stay, Your Way",
-              fSize: 18,
-              fWeight: FontWeight.w500,
-              fColor: AppColor.yellowColor,
-            )
+                text: "Find Your Stay, Your Way",
+                fSize: 18,
+                fWeight: FontWeight.w500,
+                fColor: AppColor.yellowColor),
           ],
         ),
       ),
