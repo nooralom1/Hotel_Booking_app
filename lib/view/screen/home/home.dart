@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hotel_booking_app/controller/getx_controller/home.dart';
@@ -6,13 +7,20 @@ import 'package:hotel_booking_app/view/common_widget/common_text.dart';
 import 'package:hotel_booking_app/view/common_widget/search_field.dart';
 import 'package:hotel_booking_app/view/screen/home/widget/business_accommodates_view.dart';
 import 'package:hotel_booking_app/view/screen/home/widget/date_guest_show.dart';
+import 'package:hotel_booking_app/view/screen/home/widget/filter_bottom_sheet.dart';
 import 'package:hotel_booking_app/view/screen/home/widget/filter_button.dart';
 import 'package:hotel_booking_app/view/screen/home/widget/notification.dart';
 import 'package:hotel_booking_app/view/screen/home/widget/recommended_hotel_view.dart';
+import 'package:hotel_booking_app/view/screen/hotel_details/hotel_details.dart';
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
   const Home({super.key});
 
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     HomeController controller = Get.put(HomeController());
@@ -28,28 +36,32 @@ class Home extends StatelessWidget {
               children: [
                 SizedBox(height: screenHeight * 0.01),
                 const Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      CommonText(text: "Location", fWeight: FontWeight.w600),
-                      NotificationButton()
-                    ]),
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    CommonText(text: "Location", fWeight: FontWeight.w600),
+                    NotificationButton()
+                  ],
+                ),
                 const CommonText(
                     text: "Bali, Indonesia",
                     fSize: 20,
                     fWeight: FontWeight.bold,
                     fColor: AppColor.primaryColor),
                 SizedBox(height: screenHeight * 0.03),
-                Row(mainAxisAlignment: MainAxisAlignment.start, children: [
-                  DateGuestShow(
-                      icon: Icons.calendar_month,
-                      text: "24 OCT-26 OCT",
-                      width: screenWidth * 0.4),
-                  SizedBox(width: screenWidth * 0.03),
-                  DateGuestShow(
-                      text: "3 guests",
-                      width: screenWidth * 0.3,
-                      icon: Icons.person_outline)
-                ]),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    DateGuestShow(
+                        icon: Icons.calendar_month,
+                        text: "24 OCT-26 OCT",
+                        width: screenWidth * 0.4),
+                    SizedBox(width: screenWidth * 0.03),
+                    DateGuestShow(
+                        text: "3 guests",
+                        width: screenWidth * 0.3,
+                        icon: Icons.person_outline)
+                  ],
+                ),
                 SizedBox(height: screenHeight * 0.02),
                 Padding(
                   padding: const EdgeInsets.only(right: 15),
@@ -60,7 +72,14 @@ class Home extends StatelessWidget {
                           searchController: controller.searchController,
                           width: screenWidth * 0.7),
                       FilterButton(
-                        onTap: () {},
+                        onTap: () {
+                          showModalBottomSheet<void>(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return const FilterBottomSheet();
+                            },
+                          );
+                        },
                       )
                     ],
                   ),
@@ -72,25 +91,35 @@ class Home extends StatelessWidget {
                     fColor: AppColor.primaryColor,
                     fWeight: FontWeight.bold),
                 SizedBox(height: screenHeight * 0.01),
-                SizedBox(
-                    height: screenHeight * 0.35,
-                    child: ListView.builder(
-                        scrollDirection: Axis.horizontal,
-                        itemCount: 5,
-                        itemBuilder: (context, index) {
-                          return RecommendedHotelView(
-                            image: "assets/database/Rectangle 53.png",
-                            discount: '10% OFF',
-                            rating: "4.5",
-                            name: "AYANA Resort",
-                            location: "Bali, Indonesia",
-                            price: "\$200 - \$500 USD",
-                            onTap: () {},
-                          );
-                        })),
-                SizedBox(
-                  height: screenHeight * 0.02,
-                ),
+                Obx(() => controller.isLoading.isFalse
+                    ? SizedBox(
+                        height: screenHeight * 0.35,
+                        child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          itemCount: controller.recommendedHotel.length,
+                          itemBuilder: (context, index) {
+                            return RecommendedHotelView(
+                              image:
+                                  "${controller.recommendedHotel[index].image}",
+                              discount:
+                                  "${controller.recommendedHotel[index].discount}",
+                              rating:
+                                  "${controller.recommendedHotel[index].rating}",
+                              name:
+                                  "${controller.recommendedHotel[index].name}",
+                              location:
+                                  "${controller.recommendedHotel[index].location}",
+                              price:
+                                  "${controller.recommendedHotel[index].price}",
+                              onTap: () {
+                                Get.to(()=>HotelDetails());
+                              },
+                            );
+                          },
+                        ),
+                      )
+                    : const Center(child: CircularProgressIndicator())),
+                SizedBox(height: screenHeight * 0.02),
                 const CommonText(
                   text: "Business Accommodates",
                   fColor: AppColor.primaryColor,
@@ -98,18 +127,22 @@ class Home extends StatelessWidget {
                   fSize: 20,
                 ),
                 SizedBox(height: screenHeight * 0.01),
-                SizedBox(
-                  height: screenHeight * 0.24,
-                  child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: 5,
-                      itemBuilder: (context, index) {
-                        return BusinessAccommodateView(
-                          image: "assets/database/Rectangle 60.png",
-                          onTap: () {},
-                        );
-                      }),
-                )
+                Obx(() => controller.isLoading.isFalse
+                    ? SizedBox(
+                        height: screenHeight * 0.24,
+                        child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          itemCount: controller.businessAccommodates.length,
+                          itemBuilder: (context, index) {
+                            return BusinessAccommodateView(
+                              image:
+                                  "${controller.businessAccommodates[index].image}",
+                              onTap: () {},
+                            );
+                          },
+                        ),
+                      )
+                    : const Center(child: CircularProgressIndicator())),
               ],
             ),
           ),
