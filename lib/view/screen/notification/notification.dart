@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:hotel_booking_app/controller/getx_controller/notification.dart';
 import 'package:hotel_booking_app/view/common_widget/common_back_button.dart';
 import 'package:hotel_booking_app/view/common_widget/common_text.dart';
 import 'package:hotel_booking_app/view/screen/notification/widget/notification_view_card.dart';
@@ -8,6 +10,7 @@ class NotificationPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    NotificationController controller = Get.put(NotificationController());
     double screenHeight = MediaQuery.sizeOf(context).height;
     double screenWidth = MediaQuery.sizeOf(context).width;
     return Scaffold(
@@ -33,14 +36,18 @@ class NotificationPage extends StatelessWidget {
               SizedBox(
                 height: screenHeight * 0.05,
               ),
-              Expanded(
-                  child: ListView.builder(
-                      itemCount: 5,
-                      itemBuilder: (context, index) {
-                        return const NotificationViewCard(
-                          text: "Horem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum,"
-                        );
-                      }))
+              Obx(() => controller.isLoading.isFalse
+                  ? Expanded(
+                      child: ListView.builder(
+                          itemCount: controller.notification.length,
+                          itemBuilder: (context, index) {
+                            return NotificationViewCard(
+                                text:
+                                    "${controller.notification[index].notification}");
+                          }))
+                  : Center(
+                      child: CircularProgressIndicator(),
+                    ))
             ],
           ),
         ),
