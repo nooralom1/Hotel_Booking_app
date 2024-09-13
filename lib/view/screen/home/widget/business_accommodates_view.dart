@@ -34,10 +34,7 @@ class BusinessAccommodateView extends StatelessWidget {
                   width: screenWidth * 0.58,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Image.asset(
-                    image,
-                    fit: BoxFit.fill,
+                    image: DecorationImage(image: NetworkImage(image),fit: BoxFit.fill)
                   ),
                 ),
                 Row(
