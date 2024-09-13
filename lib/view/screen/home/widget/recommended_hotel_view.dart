@@ -38,8 +38,8 @@ class RecommendedHotelView extends StatelessWidget {
                     width: screenWidth*0.58,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
+                      image: DecorationImage(image: NetworkImage(image),fit: BoxFit.fill)
                     ),
-                    child: Image.asset(image,fit: BoxFit.fill,),
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
