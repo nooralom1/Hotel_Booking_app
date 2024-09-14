@@ -45,7 +45,7 @@ class NotificationPage extends StatelessWidget {
                                 text:
                                     "${controller.notification[index].notification}");
                           }))
-                  : Center(
+                  : const Center(
                       child: CircularProgressIndicator(),
                     ))
             ],
