@@ -6,6 +6,7 @@ import 'package:hotel_booking_app/view/common_widget/common_back_button.dart';
 import 'package:hotel_booking_app/view/common_widget/common_button.dart';
 import 'package:hotel_booking_app/view/common_widget/common_loading_button.dart';
 import 'package:hotel_booking_app/view/common_widget/common_text.dart';
+import 'package:hotel_booking_app/view/screen/auth/forget_pass.dart';
 import 'package:hotel_booking_app/view/screen/auth/sign_up.dart';
 import 'package:hotel_booking_app/view/screen/auth/widget/circle_button.dart';
 import 'package:hotel_booking_app/view/screen/auth/widget/mail_field.dart';
@@ -61,12 +62,17 @@ class SignIn extends StatelessWidget {
                     passController: controller.passController,
                     prefixIcon: Icons.lock_outline_sharp),
                 SizedBox(height: screenHeight * 0.03),
-                const Row(mainAxisAlignment: MainAxisAlignment.end, children: [
-                  CommonText(
-                      text: "Forgot Password?",
-                      fSize: 15,
-                      fWeight: FontWeight.w500,
-                      fColor: AppColor.primaryColor)
+                 Row(mainAxisAlignment: MainAxisAlignment.end, children: [
+                  InkWell(
+                    onTap: (){
+                      Get.to(()=>const ForgetPass());
+                    },
+                    child: const CommonText(
+                        text: "Forgot Password?",
+                        fSize: 15,
+                        fWeight: FontWeight.w500,
+                        fColor: AppColor.primaryColor),
+                  )
                 ]),
                 SizedBox(height: screenHeight * 0.05),
                 Obx(() => controller.isLoading.value
