@@ -7,7 +7,7 @@ import 'package:hotel_booking_app/view/common_widget/common_back_button.dart';
 import 'package:hotel_booking_app/view/common_widget/common_button.dart';
 import 'package:hotel_booking_app/view/common_widget/common_loading_button.dart';
 import 'package:hotel_booking_app/view/common_widget/common_text.dart';
-import 'package:hotel_booking_app/view/screen/auth/sign_in.dart';
+import 'package:hotel_booking_app/view/screen/auth/reset_pass.dart';
 import 'package:hotel_booking_app/view/screen/auth/widget/custom_timer.dart';
 import 'package:hotel_booking_app/view/screen/auth/widget/verify_field.dart';
 
@@ -80,7 +80,7 @@ class Verify extends StatelessWidget {
                             var status = await controller.verificationService();
                             controller.isLoading.value = false;
                             if (status) {
-                              Get.off(() => const SignIn());
+                              Get.off(() => const ResetPass());
                             }
                           },
                         ),
