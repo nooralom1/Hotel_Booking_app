@@ -1,4 +1,3 @@
-import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hotel_booking_app/controller/getx_controller/home.dart';
@@ -98,6 +97,7 @@ class _HomeState extends State<Home> {
                           scrollDirection: Axis.horizontal,
                           itemCount: controller.recommendedHotel.length,
                           itemBuilder: (context, index) {
+                            var data  = controller.recommendedHotel[index];
                             return RecommendedHotelView(
                               image:
                                   "${controller.recommendedHotel[index].image}",
@@ -112,7 +112,8 @@ class _HomeState extends State<Home> {
                               price:
                                   "${controller.recommendedHotel[index].price}",
                               onTap: () {
-                                Get.to(()=>HotelDetails());
+                                var id = controller.recommendedHotel[index].id??0;
+                                Get.to(()=>HotelDetails(id: id,recommendedHotels: data,));
                               },
                             );
                           },
