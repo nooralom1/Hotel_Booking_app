@@ -7,16 +7,16 @@ class RecommendedHotelsListModel {
     if (json['recommendedHotels'] != null) {
       recommendedHotels = <RecommendedHotels>[];
       json['recommendedHotels'].forEach((v) {
-        recommendedHotels!.add(new RecommendedHotels.fromJson(v));
+        recommendedHotels!.add(RecommendedHotels.fromJson(v));
       });
     }
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this.recommendedHotels != null) {
+    final Map<String, dynamic> data = <String, dynamic>{};
+    if (recommendedHotels != null) {
       data['recommendedHotels'] =
-          this.recommendedHotels!.map((v) => v.toJson()).toList();
+          recommendedHotels!.map((v) => v.toJson()).toList();
     }
     return data;
   }
@@ -51,14 +51,14 @@ class RecommendedHotels {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['image'] = this.image;
-    data['name'] = this.name;
-    data['id'] = this.id;
-    data['price'] = this.price;
-    data['discount'] = this.discount;
-    data['rating'] = this.rating;
-    data['location'] = this.location;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['image'] = image;
+    data['name'] = name;
+    data['id'] = id;
+    data['price'] = price;
+    data['discount'] = discount;
+    data['rating'] = rating;
+    data['location'] = location;
     return data;
   }
 }
