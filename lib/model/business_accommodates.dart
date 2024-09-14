@@ -7,16 +7,16 @@ class BusinessAccommodatesListModel {
     if (json['businessAccommodates'] != null) {
       businessAccommodates = <BusinessAccommodates>[];
       json['businessAccommodates'].forEach((v) {
-        businessAccommodates!.add(new BusinessAccommodates.fromJson(v));
+        businessAccommodates!.add(BusinessAccommodates.fromJson(v));
       });
     }
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this.businessAccommodates != null) {
+    final Map<String, dynamic> data = <String, dynamic>{};
+    if (businessAccommodates != null) {
       data['businessAccommodates'] =
-          this.businessAccommodates!.map((v) => v.toJson()).toList();
+          businessAccommodates!.map((v) => v.toJson()).toList();
     }
     return data;
   }
@@ -36,10 +36,10 @@ class BusinessAccommodates {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['image'] = this.image;
-    data['name'] = this.name;
-    data['id'] = this.id;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['image'] = image;
+    data['name'] = name;
+    data['id'] = id;
     return data;
   }
 }
