@@ -16,6 +16,8 @@ dependencies:
   get: ^4.6.6
   flutter_timer_countdown: ^1.0.7
   flutter_launcher_icons: ^0.13.1
+  flutter_sslcommerz: ^2.2.2-nullsafety.0
+  fluttertoast: ^8.2.5
 
 
 
