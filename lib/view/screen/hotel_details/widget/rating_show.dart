@@ -14,7 +14,7 @@ class RatingShow extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: Get.height * 0.03,
-      width: Get.width * 0.4,
+      width: Get.width * 0.2,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(5),
           color: const Color(0xffe6f3ff)),
