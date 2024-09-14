@@ -135,7 +135,7 @@ class Welcome extends StatelessWidget {
                                           await controller.welcomeService();
                                       controller.isLoading.value = false;
                                       if (status) {
-                                        Get.offAll(() => const Home());
+                                        Get.to(() => const Home());
                                       }
                                     },
                                   ),
