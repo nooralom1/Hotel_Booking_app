@@ -62,10 +62,10 @@ class SignIn extends StatelessWidget {
                     passController: controller.passController,
                     prefixIcon: Icons.lock_outline_sharp),
                 SizedBox(height: screenHeight * 0.03),
-                 Row(mainAxisAlignment: MainAxisAlignment.end, children: [
+                Row(mainAxisAlignment: MainAxisAlignment.end, children: [
                   InkWell(
-                    onTap: (){
-                      Get.to(()=>const ForgetPass());
+                    onTap: () {
+                      Get.to(() => const ForgetPass());
                     },
                     child: const CommonText(
                         text: "Forgot Password?",
