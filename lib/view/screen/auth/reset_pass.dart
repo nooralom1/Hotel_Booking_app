@@ -8,7 +8,6 @@ import 'package:hotel_booking_app/view/common_widget/common_text.dart';
 import 'package:hotel_booking_app/view/screen/auth/sign_in.dart';
 import 'package:hotel_booking_app/view/screen/auth/widget/pass_field.dart';
 
-
 class ResetPass extends StatelessWidget {
   const ResetPass({super.key});
 
@@ -16,7 +15,7 @@ class ResetPass extends StatelessWidget {
   Widget build(BuildContext context) {
     ResetPassController controller = Get.put(ResetPassController());
     double screenHeight = MediaQuery.sizeOf(context).height;
-  double screenWidth = MediaQuery.sizeOf(context).width;
+    double screenWidth = MediaQuery.sizeOf(context).width;
 
     return Scaffold(
       body: SafeArea(
@@ -55,15 +54,18 @@ class ResetPass extends StatelessWidget {
                     passController: controller.confirmPassController,
                     prefixIcon: Icons.lock_outline_sharp),
                 SizedBox(height: screenHeight * 0.15),
-                Obx(() => controller.isLoading.value
-                    ? const CommonLoadingButton()
-                    : CommonButton(
-                    height: screenHeight * 0.06,
-                    width: screenWidth,
-                    btnName: "Continue",
-                    onTap: () {
-                        Get.offAll(() => const SignIn());
-                    },),),
+                Obx(
+                  () => controller.isLoading.value
+                      ? const CommonLoadingButton()
+                      : CommonButton(
+                          height: screenHeight * 0.06,
+                          width: screenWidth,
+                          btnName: "Continue",
+                          onTap: () {
+                            Get.offAll(() => const SignIn());
+                          },
+                        ),
+                ),
               ],
             ),
           ),

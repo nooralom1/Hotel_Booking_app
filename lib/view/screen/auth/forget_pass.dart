@@ -41,7 +41,7 @@ class ForgetPass extends StatelessWidget {
                     fColor: AppColor.primaryColor,
                   )
                 ]),
-                SizedBox(height: screenHeight*0.1),
+                SizedBox(height: screenHeight * 0.1),
                 const CommonText(text: "Please enter your email account"),
                 const CommonText(text: "to reset password"),
                 SizedBox(height: screenHeight * 0.04),
