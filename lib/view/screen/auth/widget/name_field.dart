@@ -12,11 +12,12 @@ class NameField extends StatelessWidget {
       controller: nameController,
       decoration: InputDecoration(
         prefixIcon: Icon(prefixIcon),
-        enabledBorder:
-            OutlineInputBorder(borderRadius: BorderRadius.circular(10),borderSide:  const BorderSide(color: Colors.grey)),
+        enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10),
+            borderSide: const BorderSide(color: Colors.grey)),
         focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
-            borderSide:  const BorderSide(color: AppColor.primaryColor)),
+            borderSide: const BorderSide(color: AppColor.primaryColor)),
       ),
     );
   }
