@@ -13,8 +13,8 @@ class CommonBackButton extends StatelessWidget {
       onPressed: () {
         Get.back();
       },
-      icon: const Icon(Icons.arrow_back,
-          color: AppColor.primaryColor, size: 25),
+      icon:
+          const Icon(Icons.arrow_back, color: AppColor.primaryColor, size: 25),
     );
   }
 }
