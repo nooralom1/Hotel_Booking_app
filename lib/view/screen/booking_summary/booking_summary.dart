@@ -177,7 +177,7 @@ class BookingSummary extends StatelessWidget {
                       height: Get.height * 0.06,
                       width: Get.width,
                       btnName: "CONTINUE TO PAYMENT",
-                      onTap: () {Get.to(()=>const Payment());})
+                      onTap: () {Get.off(()=>const Payment());})
                 ],
               ),
             ),
