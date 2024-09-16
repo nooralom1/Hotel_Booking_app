@@ -8,11 +8,9 @@ import 'package:flutter_sslcommerz/model/SSLCurrencyType.dart';
 import 'package:flutter_sslcommerz/sslcommerz.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:hotel_booking_app/view/screen/home/home.dart';
 
 class PaymentController extends GetxController {
-
   RxBool isLoading = false.obs;
 
   //  General Information
@@ -55,15 +53,15 @@ class PaymentController extends GetxController {
           fontSize: 16.0,
         );
       } else {
-        await Get.to(()=>Home());
+        await Get.to(() => const Home());
         Fluttertoast.showToast(
-            msg: "Transaction is ${result.status} and Amount is ${result.amount}",
-            toastLength: Toast.LENGTH_SHORT,
-            gravity: ToastGravity.CENTER,
-            timeInSecForIosWeb: 1,
-            backgroundColor: Colors.green,
-            textColor: Colors.white,
-            fontSize: 16.0,
+          msg: "Transaction is ${result.status} and Amount is ${result.amount}",
+          toastLength: Toast.LENGTH_SHORT,
+          gravity: ToastGravity.CENTER,
+          timeInSecForIosWeb: 1,
+          backgroundColor: Colors.green,
+          textColor: Colors.white,
+          fontSize: 16.0,
         );
       }
     } catch (e) {
@@ -92,7 +90,11 @@ class PaymentController extends GetxController {
             shipmentMethod: "yes",
             numOfItems: 5,
             shipmentDetails: ShipmentDetails(
-                shipAddress1: "Ship address 1", shipCity: "Faridpur", shipCountry: "Bangladesh", shipName: "Ship name 1", shipPostCode: "7860")));
+                shipAddress1: "Ship address 1",
+                shipCity: "Faridpur",
+                shipCountry: "Bangladesh",
+                shipName: "Ship name 1",
+                shipPostCode: "7860")));
 
     sslcommerz.addCustomerInfoInitializer(
         customerInfoInitializer: SSLCCustomerInfoInitializer(
@@ -107,16 +109,20 @@ class PaymentController extends GetxController {
 
     try {
       SSLCTransactionInfoModel result = await sslcommerz.payNow();
-      debugPrint("=======================================================================");
-      debugPrint("=======================================================================");
+      debugPrint(
+          "=======================================================================");
+      debugPrint(
+          "=======================================================================");
       debugPrint("=======  status}     ${result.status}    =========");
       debugPrint("=======  amount}     ${result.amount}    =========");
       debugPrint("=======  aPIConnect  ${result.aPIConnect}    =========");
       debugPrint("=======  bankTranId  ${result.bankTranId}    =========");
       debugPrint("=======  baseFair}   ${result.baseFair}    =========");
       debugPrint("=======  cardBrand}  ${result.cardBrand}    =========");
-      debugPrint("=======  cardIssuer  ${result.cardIssuerCountry}    =========");
-      debugPrint("=======  cardIssuer  ${result.cardIssuerCountryCode}    =========");
+      debugPrint(
+          "=======  cardIssuer  ${result.cardIssuerCountry}    =========");
+      debugPrint(
+          "=======  cardIssuer  ${result.cardIssuerCountryCode}    =========");
       debugPrint("=======  cardNo}     ${result.cardNo}    =========");
       debugPrint("=======  cardType}   ${result.cardType}    =========");
       debugPrint("=======  currencyAm  ${result.currencyAmount}    =========");
@@ -134,8 +140,10 @@ class PaymentController extends GetxController {
       debugPrint("=======  valueB}     ${result.valueB}    =========");
       debugPrint("=======  valueC}     ${result.valueC}    =========");
       debugPrint("=======  valueD}     ${result.valueD}    =========");
-      debugPrint("=======================================================================");
-      debugPrint("=======================================================================");
+      debugPrint(
+          "=======================================================================");
+      debugPrint(
+          "=======================================================================");
 
       if (result.status!.toLowerCase() == "failed") {
         Fluttertoast.showToast(
