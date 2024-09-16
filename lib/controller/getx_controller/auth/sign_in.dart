@@ -9,8 +9,7 @@ class SignInController extends GetxController {
 
   Future<bool> signInService() async {
     bool status = await SignInService.signInService(
-        mail: mailController.text,
-        pass: passController.text);
+        mail: mailController.text, pass: passController.text);
     return status;
   }
 
