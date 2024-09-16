@@ -15,8 +15,7 @@ class NotificationListModel {
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
     if (notifications != null) {
-      data['notifications'] =
-          notifications!.map((v) => v.toJson()).toList();
+      data['notifications'] = notifications!.map((v) => v.toJson()).toList();
     }
     return data;
   }
