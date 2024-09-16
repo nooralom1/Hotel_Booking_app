@@ -11,7 +11,8 @@ class CommonButton extends StatelessWidget {
     this.fColor,
     this.fSize,
     this.fWeight,
-    this.btnColor, required this.onTap,
+    this.btnColor,
+    required this.onTap,
   });
   final Color? btnColor;
   final double height;
@@ -36,8 +37,8 @@ class CommonButton extends StatelessWidget {
           child: CommonText(
             text: btnName,
             fSize: fSize ?? 18,
-            fWeight: fWeight?? FontWeight.w500,
-            fColor:fColor ?? Colors.white,
+            fWeight: fWeight ?? FontWeight.w500,
+            fColor: fColor ?? Colors.white,
           ),
         ),
       ),
