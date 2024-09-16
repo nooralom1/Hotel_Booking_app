@@ -6,7 +6,8 @@ class SearchField extends StatelessWidget {
       {super.key,
       this.prefixIcon,
       required this.searchController,
-      this.hintText, required this.width});
+      this.hintText,
+      required this.width});
 
   final TextEditingController searchController;
   final IconData? prefixIcon;
@@ -21,7 +22,7 @@ class SearchField extends StatelessWidget {
         controller: searchController,
         decoration: InputDecoration(
           hintText: hintText ?? "Search Hotel By Name",
-          prefixIcon: Icon(prefixIcon?? Icons.search),
+          prefixIcon: Icon(prefixIcon ?? Icons.search),
           enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
               borderSide: const BorderSide(color: Colors.grey)),
