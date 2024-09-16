@@ -1,4 +1,3 @@
-import 'dart:developer';
 
 import 'package:get/get.dart';
 import 'package:hotel_booking_app/controller/api_controller/notification.dart';
