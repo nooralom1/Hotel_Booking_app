@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 class CircleButton extends StatelessWidget {
   const CircleButton({
-    super.key, required this.imageUrl,
+    super.key,
+    required this.imageUrl,
   });
   final String imageUrl;
 
@@ -10,8 +11,7 @@ class CircleButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return CircleAvatar(
       radius: 30,
-      child: Center(
-          child: Image.asset(imageUrl)),
+      child: Center(child: Image.asset(imageUrl)),
     );
   }
 }
