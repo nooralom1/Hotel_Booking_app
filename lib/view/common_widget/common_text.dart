@@ -19,10 +19,10 @@ class CommonText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Text(
+    return Text(
       text,
       style: TextStyle(
-          color: fColor?? Colors.black,
+          color: fColor ?? Colors.black,
           fontSize: fSize ?? 15,
           fontWeight: fWeight,
           overflow: overflow),
