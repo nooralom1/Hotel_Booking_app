@@ -7,7 +7,6 @@ import 'package:hotel_booking_app/view/common_widget/common_button.dart';
 import 'package:hotel_booking_app/view/common_widget/common_loading_button.dart';
 import 'package:hotel_booking_app/view/common_widget/common_text.dart';
 import 'package:hotel_booking_app/view/screen/auth/sign_in.dart';
-import 'package:hotel_booking_app/view/screen/auth/verify.dart';
 import 'package:hotel_booking_app/view/screen/auth/widget/circle_button.dart';
 import 'package:hotel_booking_app/view/screen/auth/widget/mail_field.dart';
 import 'package:hotel_booking_app/view/screen/auth/widget/name_field.dart';
@@ -78,7 +77,7 @@ class SignUp extends StatelessWidget {
                           var status = await controller.signUpService();
                           controller.isLoading.value = false;
                           if (status) {
-                            Get.off(() => const Verify());
+                            Get.off(() => const SignIn());
                           }
                         })),
                 SizedBox(height: screenHeight * 0.04),
