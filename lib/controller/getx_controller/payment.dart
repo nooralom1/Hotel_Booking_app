@@ -8,7 +8,7 @@ import 'package:flutter_sslcommerz/model/SSLCurrencyType.dart';
 import 'package:flutter_sslcommerz/sslcommerz.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
-import 'package:hotel_booking_app/view/screen/home/home.dart';
+import 'package:hotel_booking_app/view/screen/payment_success/payment_success.dart';
 
 class PaymentController extends GetxController {
   RxBool isLoading = false.obs;
@@ -28,10 +28,8 @@ class PaymentController extends GetxController {
         tran_id: "1234567891012",
       ),
     );
-
     try {
       SSLCTransactionInfoModel result = await sslcommerz.payNow();
-
       if (result.status!.toLowerCase() == "failed") {
         Fluttertoast.showToast(
           msg: "Transaction is Failed....",
@@ -53,7 +51,7 @@ class PaymentController extends GetxController {
           fontSize: 16.0,
         );
       } else {
-        await Get.to(() => const Home());
+        await Get.off(()=>const PaymentSuccess());
         Fluttertoast.showToast(
           msg: "Transaction is ${result.status} and Amount is ${result.amount}",
           toastLength: Toast.LENGTH_SHORT,
@@ -164,6 +162,7 @@ class PaymentController extends GetxController {
           textColor: Colors.white,
           fontSize: 16.0,
         );
+        await Get.off(()=>const PaymentSuccess());
       }
     } catch (e) {
       debugPrint(e.toString());
