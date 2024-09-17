@@ -3,7 +3,8 @@ import 'package:hotel_booking_app/utils/app_color.dart';
 
 class WhereField extends StatelessWidget {
   const WhereField({
-    super.key, required this.whereController,
+    super.key,
+    required this.whereController,
   });
   final TextEditingController whereController;
 
