@@ -19,12 +19,13 @@ class HotelDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: AppColor.primaryColor,
         leading: const CommonBackButton(),
         title: const CommonText(
             text: "Hotel Details",
             fSize: 20,
             fWeight: FontWeight.bold,
-            fColor: AppColor.primaryColor),
+            fColor: Colors.white),
         centerTitle: true,
         actions: const [
           Icon(Icons.share, color: AppColor.primaryColor),
