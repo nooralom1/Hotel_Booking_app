@@ -8,6 +8,8 @@ import 'package:flutter_sslcommerz/model/SSLCurrencyType.dart';
 import 'package:flutter_sslcommerz/sslcommerz.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
+import 'package:hotel_booking_app/view/screen/booking_summary/booking_summary.dart';
+import 'package:hotel_booking_app/view/screen/home/home.dart';
 import 'package:hotel_booking_app/view/screen/payment_success/payment_success.dart';
 
 class PaymentController extends GetxController {
@@ -152,6 +154,7 @@ class PaymentController extends GetxController {
             backgroundColor: Colors.red,
             textColor: Colors.white,
             fontSize: 16.0);
+        await Get.off(()=>const Home());
       } else {
         Fluttertoast.showToast(
           msg: "Transaction is ${result.status} and Amount is ${result.amount}",
