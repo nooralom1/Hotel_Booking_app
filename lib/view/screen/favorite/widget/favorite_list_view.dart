@@ -72,12 +72,12 @@ class FavoriteListViewCard extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    IconButton(onPressed: (){}, icon: Icon(Icons.remove)),
-                    CommonText(text: "1"),
-                    IconButton(onPressed: (){}, icon: Icon(Icons.add)),
+                    IconButton(onPressed: (){}, icon: const Icon(Icons.remove)),
+                    const CommonText(text: "1"),
+                    IconButton(onPressed: (){}, icon: const Icon(Icons.add)),
                   ],
                 ),
-                IconButton(onPressed: (){}, icon: Icon(Icons.delete))
+                IconButton(onPressed: (){}, icon: const Icon(Icons.delete))
               ],
             )
           ],
