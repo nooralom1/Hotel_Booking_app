@@ -16,12 +16,13 @@ class Payment extends StatelessWidget {
     PaymentController controller = Get.put(PaymentController());
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: AppColor.primaryColor,
         leading: const CommonBackButton(),
         title: const CommonText(
             text: "Payment",
             fSize: 20,
             fWeight: FontWeight.bold,
-            fColor: AppColor.primaryColor),
+            fColor: Colors.white),
         centerTitle: true,
       ),
       body: SafeArea(
