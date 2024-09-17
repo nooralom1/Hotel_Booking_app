@@ -3,7 +3,8 @@ import 'package:hotel_booking_app/utils/app_color.dart';
 
 class DateField extends StatelessWidget {
   const DateField({
-    super.key, required this.dateController,
+    super.key,
+    required this.dateController,
   });
   final TextEditingController dateController;
 
@@ -11,7 +12,7 @@ class DateField extends StatelessWidget {
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.sizeOf(context).width;
     return SizedBox(
-      width: screenWidth*0.433,
+      width: screenWidth * 0.433,
       child: TextField(
         controller: dateController,
         decoration: InputDecoration(
@@ -20,15 +21,11 @@ class DateField extends StatelessWidget {
             color: Colors.grey,
           ),
           enabledBorder: OutlineInputBorder(
-              borderSide:
-              const BorderSide(color: Colors.grey),
-              borderRadius:
-              BorderRadius.circular(10)),
+              borderSide: const BorderSide(color: Colors.grey),
+              borderRadius: BorderRadius.circular(10)),
           focusedBorder: OutlineInputBorder(
-              borderSide: const BorderSide(
-                  color: AppColor.primaryColor),
-              borderRadius:
-              BorderRadius.circular(10)),
+              borderSide: const BorderSide(color: AppColor.primaryColor),
+              borderRadius: BorderRadius.circular(10)),
         ),
       ),
     );
