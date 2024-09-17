@@ -23,7 +23,7 @@ class BookingSummary extends StatelessWidget {
       appBar: AppBar(
         leading: const CommonBackButton(),
         title: const CommonText(
-            text: "Hotel Details",
+            text: "Booking Summary",
             fSize: 20,
             fWeight: FontWeight.bold,
             fColor: AppColor.primaryColor),
