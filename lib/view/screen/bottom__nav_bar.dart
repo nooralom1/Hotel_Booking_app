@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:hotel_booking_app/utils/app_color.dart';
+import 'package:hotel_booking_app/view/screen/booking_list/booking_list.dart';
+import 'package:hotel_booking_app/view/screen/chat/chat.dart';
 import 'package:hotel_booking_app/view/screen/favorite/favorite.dart';
 import 'package:hotel_booking_app/view/screen/home/home.dart';
+import 'package:hotel_booking_app/view/screen/profile/profile.dart';
 import 'package:light_bottom_navigation_bar/light_bottom_navigation_bar.dart';
 
 class BottomNavBar extends StatefulWidget {
@@ -15,9 +18,9 @@ class _BottomNavBarState extends State<BottomNavBar> {
   var screensList = [
     const Home(),
     const Favorite(),
-    const Text('Favorites'),
-    const Text('Done'),
-    const Text('Profile'),
+    const BookingList(),
+    const Chat(),
+    const Profile(),
   ];
   var index = 0;
 
