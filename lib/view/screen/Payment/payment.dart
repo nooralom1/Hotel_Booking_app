@@ -27,26 +27,39 @@ class Payment extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            SizedBox(height: Get.height*0.2),
+            SizedBox(height: Get.height * 0.2),
             Container(
-              height: Get.height*0.2,
+              height: Get.height * 0.2,
               width: Get.width,
               color: Colors.blue.shade100,
               child: const Center(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    CommonText(text: "Total Price",fSize: 20,fWeight: FontWeight.bold,),
-                    CommonText(text: "\$750.00",fSize: 36,fWeight: FontWeight.bold,fColor: AppColor.primaryColor,),
-                    CommonText(text: "5% vst included",fColor: Colors.grey,fSize: 18,),
+                    CommonText(
+                      text: "Total Price",
+                      fSize: 20,
+                      fWeight: FontWeight.bold,
+                    ),
+                    CommonText(
+                      text: "\$750.00",
+                      fSize: 36,
+                      fWeight: FontWeight.bold,
+                      fColor: AppColor.primaryColor,
+                    ),
+                    CommonText(
+                      text: "5% vst included",
+                      fColor: Colors.grey,
+                      fSize: 18,
+                    ),
                   ],
                 ),
               ),
             ),
-            SizedBox(height: Get.height*0.1),
+            SizedBox(height: Get.height * 0.1),
             CommonButton(
                 height: Get.height * 0.06,
-                width: Get.width*0.95,
+                width: Get.width * 0.95,
                 btnName: "PAY NOW",
                 onTap: () async {
                   log("message");
