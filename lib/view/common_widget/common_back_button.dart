@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hotel_booking_app/utils/app_color.dart';
 
 class CommonBackButton extends StatelessWidget {
   const CommonBackButton({
@@ -14,7 +13,7 @@ class CommonBackButton extends StatelessWidget {
         Get.back();
       },
       icon:
-          const Icon(Icons.arrow_back, color: AppColor.primaryColor, size: 25),
+          const Icon(Icons.arrow_back, color: Colors.white, size: 25),
     );
   }
 }
