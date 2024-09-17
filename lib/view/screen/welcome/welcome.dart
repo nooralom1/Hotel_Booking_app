@@ -5,7 +5,7 @@ import 'package:hotel_booking_app/utils/app_color.dart';
 import 'package:hotel_booking_app/view/common_widget/common_button.dart';
 import 'package:hotel_booking_app/view/common_widget/common_loading_button.dart';
 import 'package:hotel_booking_app/view/common_widget/common_text.dart';
-import 'package:hotel_booking_app/view/screen/home/home.dart';
+import 'package:hotel_booking_app/view/screen/bottom__nav_bar.dart';
 import 'package:hotel_booking_app/view/screen/welcome/widget/custom_add_remove.dart';
 import 'package:hotel_booking_app/view/screen/welcome/widget/date_field.dart';
 import 'package:hotel_booking_app/view/screen/welcome/widget/where_field.dart';
@@ -135,7 +135,7 @@ class Welcome extends StatelessWidget {
                                           await controller.welcomeService();
                                       controller.isLoading.value = false;
                                       if (status) {
-                                        Get.to(() => const Home());
+                                        Get.to(() => const BottomNavBar());
                                       }
                                     },
                                   ),
