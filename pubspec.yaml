@@ -19,6 +19,7 @@ dependencies:
   flutter_sslcommerz: ^2.2.2-nullsafety.0
   fluttertoast: ^8.2.5
   light_bottom_navigation_bar: ^0.0.3
+  flutter_chat_ui: ^1.6.15
 
 
 
