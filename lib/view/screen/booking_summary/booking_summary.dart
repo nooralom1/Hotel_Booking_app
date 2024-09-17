@@ -21,12 +21,13 @@ class BookingSummary extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: AppColor.primaryColor,
         leading: const CommonBackButton(),
         title: const CommonText(
             text: "Booking Summary",
             fSize: 20,
             fWeight: FontWeight.bold,
-            fColor: AppColor.primaryColor),
+            fColor: Colors.white),
         centerTitle: true,
       ),
       body: SafeArea(
