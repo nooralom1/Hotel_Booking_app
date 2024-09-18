@@ -20,12 +20,11 @@ class NotificationViewCard extends StatelessWidget {
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
             color: const Color(0xffcce6ff)),
-        child:  Center(
+        child: Center(
           child: Padding(
             padding: const EdgeInsets.only(left: 20),
             child: CommonText(
-              text:
-              text,
+              text: text,
               maxLines: 3,
               fSize: 18,
             ),
