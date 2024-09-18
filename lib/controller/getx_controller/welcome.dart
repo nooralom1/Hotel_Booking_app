@@ -7,6 +7,8 @@ class WelcomeController extends GetxController {
   TextEditingController checkInController = TextEditingController();
   TextEditingController checkOutController = TextEditingController();
   RxBool isLoading = false.obs;
+  RxInt guestCounter = 1.obs;
+  RxInt roomCounter = 1.obs;
 
   Future<bool> welcomeService() async {
     bool status = await WelcomeService.welcomeService(
