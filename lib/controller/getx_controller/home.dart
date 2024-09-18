@@ -14,11 +14,12 @@ class HomeController extends GetxController {
       <BusinessAccommodates>[].obs;
   RangeValues currentRangeValues = const RangeValues(90, 350);
   RxList<String> value = [
-    'Noor',
-    'Sakib',
-    'Fahim',
-    'Raju',
-    'Shovon',
+    '\$0 - \$1000',
+    '\$50 - \$250',
+    '\$250 - \$450',
+    '\$450 - \$650',
+    '\$650 - \$850',
+    '\$850 - \$1000',
   ].obs;
   var selectedValue = ''.obs;
 
