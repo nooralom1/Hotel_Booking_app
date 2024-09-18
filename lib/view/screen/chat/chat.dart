@@ -24,10 +24,10 @@ class Chat extends StatelessWidget {
             height: Get.height,
             width: Get.width,
             decoration: const BoxDecoration(
-                image: DecorationImage(
-              image: AssetImage("assets/image/chat.jpg"),
-              fit: BoxFit.fill,
-            ),
+              image: DecorationImage(
+                image: AssetImage("assets/image/chat.jpg"),
+                fit: BoxFit.fill,
+              ),
             ),
           )
         ],
