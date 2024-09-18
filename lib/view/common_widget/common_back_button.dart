@@ -3,8 +3,9 @@ import 'package:get/get.dart';
 
 class CommonBackButton extends StatelessWidget {
   const CommonBackButton({
-    super.key,
+    super.key, this.color,
   });
+  final Color? color;
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +14,7 @@ class CommonBackButton extends StatelessWidget {
         Get.back();
       },
       icon:
-          const Icon(Icons.arrow_back, color: Colors.white, size: 25),
+           Icon(Icons.arrow_back, color: color?? Colors.white, size: 25),
     );
   }
 }
