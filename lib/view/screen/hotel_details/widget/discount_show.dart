@@ -5,7 +5,8 @@ import 'package:hotel_booking_app/view/common_widget/common_text.dart';
 
 class DiscountShow extends StatelessWidget {
   const DiscountShow({
-    super.key, required this.text,
+    super.key,
+    required this.text,
   });
   final String text;
 
@@ -18,10 +19,7 @@ class DiscountShow extends StatelessWidget {
           borderRadius: BorderRadius.circular(5),
           color: const Color(0xffe6f3ff)),
       child: Center(
-        child: CommonText(
-            text: text,
-            fColor: AppColor.primaryColor,
-            fSize: 10),
+        child: CommonText(text: text, fColor: AppColor.primaryColor, fSize: 10),
       ),
     );
   }
