@@ -11,15 +11,15 @@ class BottomNavBar extends StatefulWidget {
   const BottomNavBar({super.key});
 
   @override
-  _BottomNavBarState createState() => _BottomNavBarState();
+  BottomNavBarState createState() => BottomNavBarState();
 }
 
-class _BottomNavBarState extends State<BottomNavBar> {
+class BottomNavBarState extends State<BottomNavBar> {
   var screensList = [
     const Home(),
     const Favorite(),
     const BookingList(),
-    const Chat(),
+    const ChatPage(),
     const Profile(),
   ];
   var index = 0;
