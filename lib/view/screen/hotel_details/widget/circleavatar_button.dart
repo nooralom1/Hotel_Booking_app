@@ -16,7 +16,10 @@ class CircleAvatarButton extends StatelessWidget {
       radius: 20,
       backgroundColor: color ?? AppColor.primaryColor,
       child: Center(
-        child: Icon(icon,color: Colors.white,),
+        child: Icon(
+          icon,
+          color: Colors.white,
+        ),
       ),
     );
   }
