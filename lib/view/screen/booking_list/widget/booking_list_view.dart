@@ -45,7 +45,7 @@ class BookingListViewCard extends StatelessWidget {
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   image: DecorationImage(
-                      image: AssetImage(image), fit: BoxFit.fill)),
+                      image: NetworkImage(image), fit: BoxFit.fill)),
             ),
             SizedBox(
               width: Get.width * 0.02,
