@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hotel_booking_app/controller/getx_controller/notification.dart';
+import 'package:hotel_booking_app/utils/app_color.dart';
 import 'package:hotel_booking_app/view/common_widget/common_back_button.dart';
 import 'package:hotel_booking_app/view/common_widget/common_text.dart';
 import 'package:hotel_booking_app/view/screen/notification/widget/notification_view_card.dart';
@@ -23,7 +24,9 @@ class NotificationPage extends StatelessWidget {
                 height: screenHeight * 0.02,
               ),
               Row(children: [
-                const CommonBackButton(),
+                const CommonBackButton(
+                  color: AppColor.primaryColor,
+                ),
                 SizedBox(
                   width: screenWidth * 0.02,
                 ),
