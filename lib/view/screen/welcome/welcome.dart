@@ -6,8 +6,10 @@ import 'package:hotel_booking_app/view/common_widget/common_button.dart';
 import 'package:hotel_booking_app/view/common_widget/common_loading_button.dart';
 import 'package:hotel_booking_app/view/common_widget/common_text.dart';
 import 'package:hotel_booking_app/view/screen/bottom__nav_bar.dart';
-import 'package:hotel_booking_app/view/screen/welcome/widget/custom_add_remove.dart';
+import 'package:hotel_booking_app/view/screen/welcome/widget/calender_dialog_box.dart';
 import 'package:hotel_booking_app/view/screen/welcome/widget/date_field.dart';
+import 'package:hotel_booking_app/view/screen/welcome/widget/guest_add_remove.dart';
+import 'package:hotel_booking_app/view/screen/welcome/widget/room_add_remove.dart';
 import 'package:hotel_booking_app/view/screen/welcome/widget/where_field.dart';
 
 class Welcome extends StatelessWidget {
@@ -77,8 +79,12 @@ class Welcome extends StatelessWidget {
                                         fWeight: FontWeight.bold,
                                       ),
                                       DateField(
-                                          dateController:
-                                              controller.checkInController),
+                                        dateController:
+                                            controller.checkInController,
+                                        onPressed: () {
+                                          Get.dialog(const CalendarDialogBox());
+                                        },
+                                      ),
                                     ]),
                                 Column(
                                     crossAxisAlignment:
@@ -90,8 +96,12 @@ class Welcome extends StatelessWidget {
                                         fWeight: FontWeight.bold,
                                       ),
                                       DateField(
-                                          dateController:
-                                              controller.checkOutController)
+                                        dateController:
+                                            controller.checkOutController,
+                                        onPressed: () {
+                                          Get.dialog(const CalendarDialogBox());
+                                        },
+                                      )
                                     ]),
                               ]),
                           SizedBox(height: screenHeight * 0.02),
@@ -107,7 +117,7 @@ class Welcome extends StatelessWidget {
                                         fSize: 15,
                                         fWeight: FontWeight.bold,
                                       ),
-                                      CustomAddRemove()
+                                      GuestAddRemove()
                                     ]),
                                 Column(
                                     crossAxisAlignment:
@@ -118,7 +128,7 @@ class Welcome extends StatelessWidget {
                                         fSize: 15,
                                         fWeight: FontWeight.bold,
                                       ),
-                                      CustomAddRemove()
+                                      RoomAddRemove()
                                     ]),
                               ]),
                           SizedBox(height: screenHeight * 0.06),
