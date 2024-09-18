@@ -20,9 +20,9 @@ class Entry extends StatelessWidget {
             children: [
               Stack(
                 children: [
-                  Row(mainAxisAlignment: MainAxisAlignment.end, children: [
-                    Image.asset("assets/image/entry_image1.png")
-                  ]),
+                  Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [Image.asset("assets/image/entry_image1.png")]),
                   Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                     Padding(
                         padding: const EdgeInsets.only(top: 70),
