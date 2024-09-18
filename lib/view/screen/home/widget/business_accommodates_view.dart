@@ -33,9 +33,9 @@ class BusinessAccommodateView extends StatelessWidget {
                   height: screenHeight * 0.18,
                   width: screenWidth * 0.58,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    image: DecorationImage(image: NetworkImage(image),fit: BoxFit.fill)
-                  ),
+                      borderRadius: BorderRadius.circular(10),
+                      image: DecorationImage(
+                          image: NetworkImage(image), fit: BoxFit.fill)),
                 ),
                 Row(
                   children: [
@@ -47,10 +47,10 @@ class BusinessAccommodateView extends StatelessWidget {
                           color: const Color(0xffe6f3ff)),
                       child: const Center(
                           child: CommonText(
-                            text: "Fast Wi-Fi",
-                            fColor: AppColor.primaryColor,
-                            fSize: 10,
-                          )),
+                        text: "Fast Wi-Fi",
+                        fColor: AppColor.primaryColor,
+                        fSize: 10,
+                      )),
                     ),
                     SizedBox(
                       width: screenWidth * 0.02,
