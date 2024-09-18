@@ -6,7 +6,10 @@ import 'package:hotel_booking_app/view/common_widget/common_text.dart';
 class FavoriteListViewCard extends StatelessWidget {
   const FavoriteListViewCard({
     super.key,
-    required this.image, required this.name, required this.location, required this.price,
+    required this.image,
+    required this.name,
+    required this.location,
+    required this.price,
   });
   final String image;
   final String name;
@@ -25,26 +28,25 @@ class FavoriteListViewCard extends StatelessWidget {
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
             color: const Color(0xffcce6ff)),
-        child:  Row(
+        child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            SizedBox(width: Get.width*0.000001,),
+            SizedBox(
+              width: Get.width * 0.000001,
+            ),
             Container(
               height: Get.height * 0.11,
               width: Get.width * 0.3,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  image:
-                  DecorationImage(image: AssetImage(image),fit: BoxFit.fill)),
+                  image: DecorationImage(
+                      image: AssetImage(image), fit: BoxFit.fill)),
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                CommonText(
-                    text: name,
-                    fSize: 16,
-                    fWeight: FontWeight.bold),
+                CommonText(text: name, fSize: 16, fWeight: FontWeight.bold),
                 SizedBox(height: Get.height * 0.01),
                 CommonText(
                   text: location,
@@ -52,7 +54,7 @@ class FavoriteListViewCard extends StatelessWidget {
                   fSize: 10,
                 ),
                 SizedBox(height: Get.height * 0.01),
-                 Row(
+                Row(
                   children: [
                     CommonText(
                         text: price,
@@ -60,9 +62,7 @@ class FavoriteListViewCard extends StatelessWidget {
                         fWeight: FontWeight.bold,
                         fColor: AppColor.primaryColor),
                     const CommonText(
-                        text: " /night",
-                        fSize: 16,
-                        fColor: Colors.grey),
+                        text: " /night", fSize: 16, fColor: Colors.grey),
                   ],
                 ),
                 SizedBox(height: Get.height * 0.01),
@@ -72,12 +72,13 @@ class FavoriteListViewCard extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    IconButton(onPressed: (){}, icon: const Icon(Icons.remove)),
+                    IconButton(
+                        onPressed: () {}, icon: const Icon(Icons.remove)),
                     const CommonText(text: "1"),
-                    IconButton(onPressed: (){}, icon: const Icon(Icons.add)),
+                    IconButton(onPressed: () {}, icon: const Icon(Icons.add)),
                   ],
                 ),
-                IconButton(onPressed: (){}, icon: const Icon(Icons.delete))
+                IconButton(onPressed: () {}, icon: const Icon(Icons.delete))
               ],
             )
           ],

@@ -97,7 +97,7 @@ class _HomeState extends State<Home> {
                           scrollDirection: Axis.horizontal,
                           itemCount: controller.recommendedHotel.length,
                           itemBuilder: (context, index) {
-                            var data  = controller.recommendedHotel[index];
+                            var data = controller.recommendedHotel[index];
                             return RecommendedHotelView(
                               image:
                                   "${controller.recommendedHotel[index].image}",
@@ -112,8 +112,12 @@ class _HomeState extends State<Home> {
                               price:
                                   "${controller.recommendedHotel[index].price}",
                               onTap: () {
-                                var id = controller.recommendedHotel[index].id??0;
-                                Get.to(()=>HotelDetails(id: id,recommendedHotels: data,));
+                                var id =
+                                    controller.recommendedHotel[index].id ?? 0;
+                                Get.to(() => HotelDetails(
+                                      id: id,
+                                      recommendedHotels: data,
+                                    ));
                               },
                             );
                           },
