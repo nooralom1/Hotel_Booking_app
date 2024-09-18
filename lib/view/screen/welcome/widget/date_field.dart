@@ -4,9 +4,10 @@ import 'package:hotel_booking_app/utils/app_color.dart';
 class DateField extends StatelessWidget {
   const DateField({
     super.key,
-    required this.dateController,
+    required this.dateController, required this.onPressed,
   });
   final TextEditingController dateController;
+  final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -16,9 +17,9 @@ class DateField extends StatelessWidget {
       child: TextField(
         controller: dateController,
         decoration: InputDecoration(
-          suffixIcon: const Icon(
-            Icons.calendar_month_sharp,
-            color: Colors.grey,
+          suffixIcon: IconButton(
+            onPressed: onPressed,
+            icon: const Icon(Icons.calendar_month_sharp,color: Colors.grey,)
           ),
           enabledBorder: OutlineInputBorder(
               borderSide: const BorderSide(color: Colors.grey),

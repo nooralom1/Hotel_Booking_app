@@ -6,6 +6,7 @@ import 'package:hotel_booking_app/view/common_widget/common_back_button.dart';
 import 'package:hotel_booking_app/view/common_widget/common_button.dart';
 import 'package:hotel_booking_app/view/common_widget/common_text.dart';
 import 'package:hotel_booking_app/view/screen/booking_summary/booking_summary.dart';
+import 'package:hotel_booking_app/view/screen/chat/chat.dart';
 import 'package:hotel_booking_app/view/screen/hotel_details/widget/circleavatar_button.dart';
 import 'package:hotel_booking_app/view/screen/hotel_details/widget/discount_show.dart';
 import 'package:hotel_booking_app/view/screen/hotel_details/widget/rating_show.dart';
@@ -27,11 +28,16 @@ class HotelDetails extends StatelessWidget {
             fWeight: FontWeight.bold,
             fColor: Colors.white),
         centerTitle: true,
-        actions: const [
-          Icon(Icons.share, color: AppColor.primaryColor),
+        actions: [
+          const Icon(Icons.share, color: Colors.white),
           Padding(
-            padding: EdgeInsets.only(left: 10, right: 20),
-            child: Icon(Icons.favorite_border, color: AppColor.primaryColor),
+            padding: const EdgeInsets.only(left: 10, right: 20),
+            child: IconButton(
+              onPressed: () {
+                Get.snackbar("message", "Add to Favorite");
+              },
+              icon: const Icon(Icons.favorite_border, color: Colors.white),
+            ),
           )
         ],
       ),
@@ -57,7 +63,11 @@ class HotelDetails extends StatelessWidget {
                           text: "${recommendedHotels?.name}",
                           fWeight: FontWeight.bold,
                           fSize: 16),
-                      const CircleAvatarButton(icon: Icons.send)
+                      InkWell(
+                          onTap: () {
+                            Get.to(() => const ChatPage());
+                          },
+                          child: const CircleAvatarButton(icon: Icons.send))
                     ],
                   ),
                   SizedBox(height: Get.height * 0.01),
