@@ -6,7 +6,8 @@ class DateGuestShow extends StatelessWidget {
   const DateGuestShow({
     super.key,
     required this.text,
-    required this.icon, required this.width,
+    required this.icon,
+    required this.width,
   });
   final String text;
   final IconData icon;
@@ -25,11 +26,7 @@ class DateGuestShow extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Icon(
-                icon,
-                color: Colors.grey,
-                size: 17
-            ),
+            Icon(icon, color: Colors.grey, size: 17),
             CommonText(
               text: text,
               fColor: AppColor.primaryColor,
