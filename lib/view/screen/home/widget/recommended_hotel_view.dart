@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:hotel_booking_app/utils/app_color.dart';
 import 'package:hotel_booking_app/view/common_widget/common_text.dart';
 
@@ -97,9 +98,14 @@ class RecommendedHotelView extends StatelessWidget {
                           ),
                         ],
                       ),
-                      const Icon(
-                        Icons.favorite_border,
-                        color: AppColor.primaryColor,
+                      IconButton(
+                        onPressed: () {
+                          Get.snackbar("message", "Add to Favorite");
+                        },
+                        icon: const Icon(
+                          Icons.favorite_border,
+                          color: AppColor.primaryColor,
+                        ),
                       )
                     ],
                   ),

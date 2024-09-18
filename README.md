@@ -1,16 +1,19 @@
-# hotel_booking_app
+Project Name
 
-A new Flutter project.
+=> Cozy Hotel
 
-## Getting Started
+Project Version & Date
 
-This project is a starting point for a Flutter application.
+=> Flutter 3.22.2  
+=> Dart 3.4.3
+=> 19 Sep 2024
 
-A few resources to get you started if this is your first Flutter project:
+Product Owner
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+=> Noor Alam Siddik
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Developer
+
+=> Noor Alam Siddik
+=> What's App : 01707418534
+
