@@ -1,6 +1,9 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:hotel_booking_app/utils/app_color.dart';
 import 'package:hotel_booking_app/view/common_widget/common_text.dart';
+import 'package:image_picker/image_picker.dart';
 
 class Profile extends StatefulWidget {
   const Profile({super.key});
@@ -15,6 +18,20 @@ class _ProfileState extends State<Profile> {
     "noor@gmail.com",
     "Change Password",
   ];
+
+  File? _image;
+
+  final ImagePicker _picker = ImagePicker();
+
+  Future<void> _pickImage(ImageSource source) async {
+    final XFile? pickedFile = await _picker.pickImage(source: source);
+
+    if (pickedFile != null) {
+      setState(() {
+        _image = File(pickedFile.path);
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,21 +52,66 @@ class _ProfileState extends State<Profile> {
           padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 30),
           child: Column(
             children: [
-              const CircleAvatar(
-                radius: 70,
-                child: Center(
-                  child: Image(
-                      image: AssetImage(
-                          "assets/image/profile_logo-removebg-preview.png")),
-                ),
-              ),
+              CircleAvatar(
+                  radius: 70,
+                  backgroundImage: _image == null
+                      ? const AssetImage(
+                          "assets/image/profile_logo-removebg-preview.png")
+                      : FileImage(_image!)),
               SizedBox(
                 height: screenHeight * 0.013,
               ),
-              Text(
-                "Change profile Photo",
-                style: TextStyle(
-                    fontSize: screenWidth * 0.06, color: AppColor.primaryColor),
+              InkWell(
+                onTap: () async {
+                  Get.dialog(AlertDialog(
+                    content: SizedBox(
+                      height: Get.height * 0.15,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          InkWell(
+                            onTap: () async {
+                              await _pickImage(ImageSource.camera);
+                              Get.back();
+                            },
+                            child: Card(
+                              color: Colors.blue[100],
+                              child: SizedBox(
+                                height: Get.height * 0.08,
+                                width: Get.width * 0.2,
+                                child: const Center(
+                                  child: Icon(Icons.camera_alt_outlined),
+                                ),
+                              ),
+                            ),
+                          ),
+                          InkWell(
+                            onTap: () async {
+                              await _pickImage(ImageSource.gallery);
+                              Get.back();
+                            },
+                            child: Card(
+                              color: Colors.blue[100],
+                              child: SizedBox(
+                                height: Get.height * 0.08,
+                                width: Get.width * 0.2,
+                                child: const Center(
+                                  child: Icon(Icons.image_outlined),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ));
+                },
+                child: Text(
+                  "Change profile Photo",
+                  style: TextStyle(
+                      fontSize: screenWidth * 0.06,
+                      color: AppColor.primaryColor),
+                ),
               ),
               SizedBox(
                 height: screenHeight * 0.07,
